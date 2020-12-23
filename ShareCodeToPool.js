@@ -15,20 +15,31 @@ const jxfactoryURL = 'http://api.turinglabs.net/api/v1/jd/jxfactory/create/'
 
 //农场互助码
 const farmCode0 = 'aeac5c5ce9df46fa9877b92bb468ab74'
+const farmCode1 = 'e570c12d222f4769a928285da6cd7a30'
 //萌宠的互助码
 const petCode0 = 'MTAxODc2NTEzNTAwMDAwMDAyMDYwMzk3Mw=='
+const petCode1 = 'MTE1NDQ5MzYwMDAwMDAwNDI5MTA0NjM='
 //种豆得豆的
 const beanCode0 = 'mlrdw3aw26j3xftb3pgrm3krccu2ylu7tpzg5hq'
+const beanCode1 = 'mlrdw3aw26j3xi4c7udwadzq3dqbxtzqhg74mxa'
 //东东工厂
 const ddfactory0 = 'P04z54XCjVWnYaS5m9cZ2X41HRIlC2dS3D0uC0'
+const ddfactory1 = 'T0225KkcRUgeo1eDdEj0kqNedgCjVWnYaS5kRrbA'
 //京喜工厂
 const jxfactory0 = 'MccR9ibqWoNrKk40XV4YTA=='
+const jxfactory1 = 'NlaaM68mnGYuQUWkT2TcaQ=='
 
 join(beanURL, beanCode0, "种豆0")
 join(farmURL, farmCode0, "农场0")
 join(petURL, petCode0, "萌宠0")
 join(ddfactoryURL, ddfactory0, "东东工厂0")
 join(jxfactoryURL, jxfactory0, "京喜工厂0")
+
+join(beanURL, beanCode1, "种豆1")
+join(farmURL, farmCode1, "农场1")
+join(petURL, petCode1, "萌宠1")
+join(ddfactoryURL, ddfactory1, "东东工厂1")
+join(jxfactoryURL, jxfactory1, "京喜工厂1")
 
 function join(url, code, tip) {
 	$.http.get(url + code + "/").then(res => {
