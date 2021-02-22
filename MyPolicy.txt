@@ -1,0 +1,2 @@
+# MyPolicy.list
+host-suffix, jdsharedresourcescdn.azureedge.net, MyPolicy
