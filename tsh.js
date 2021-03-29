@@ -18,11 +18,10 @@ function sign() {
   url.headers['Accept-Language'] = `zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7`
 
   machelle.get(url, (error, response, data) => {
-    machelle.log(`${cookieName}, data: ${data}`)
+    machelle.log(`${cookieName}, error: ${error}, result: ${response}, data: ${data}`)
     let result = JSON.parse(data)
     const title = `${cookieName}`
     let subTitle = '签到结果: ' + result.message + '\n'
-    
     machelle.msg(title, subTitle)
   })
   machelle.done()
