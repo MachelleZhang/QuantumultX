@@ -1,0 +1,35 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: 中青看点_sunert
+
+on:
+  workflow_dispatch:
+  schedule:
+     - cron: '5 10 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    env:
+        JD_COOKIES: ${{ secrets.JD_COOKIES }}
+    steps:
+      - name: Checkout
+        run: |
+          git clone -b qx https://github.com/MachelleZhang/QuantumultX.git ~/Scripts
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - name: npm install
+        if: env.JD_COOKIES
+        run: |
+          cd ~/Scripts
+          npm install
+      - name: '运行 【试用】'
+        if: env.JD_COOKIES
+        run: |
+          cd ~/Scripts
+          node js/jd_try.js
+          
