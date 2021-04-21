@@ -202,17 +202,22 @@ function requireConfig() {
 
   if ($.isNode()) {
 
-   const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
+   // const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
+	 const jdCookiesStr = process.env.JD_COOKIES;
+	 const jdCookiesArr = jdCookiesStr.split("&");
+	 for (let cookie of jdCookiesArr) {
+		 cookiesArr.push(cookie);
+	 }
 
-   Object.keys(jdCookieNode).forEach((item) => {
+   // Object.keys(jdCookieNode).forEach((item) => {
 
-    if (jdCookieNode[item]) {
+   //  if (jdCookieNode[item]) {
 
-     cookiesArr.push(jdCookieNode[item])
+   //   cookiesArr.push(jdCookieNode[item])
 
-    }
+   //  }
 
-   })
+   // })
 
    if (process.env.JD_DEBUG && process.env.JD_DEBUG === 'false') console.log = () => {};
 
