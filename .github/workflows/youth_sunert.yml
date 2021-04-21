@@ -22,7 +22,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/guakeliao/garbageCollection.git ~/Scripts
+          git clone -b qx https://github.com/MachelleZhang/QuantumultX.git ~/Scripts
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
