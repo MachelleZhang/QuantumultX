@@ -8,18 +8,18 @@ Author: 799953468 https://github.com/799953468
 */
 const $ = new Env('京东泡泡大战');
 //Node.js用户请在jdCookie.js处填写京东ck;
-// const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
+const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let cookiesArr = [],
     cookie = '';
 if ($.isNode()) {
-    // Object.keys(jdCookieNode).forEach((item) => {
-    //     cookiesArr.push(jdCookieNode[item])
-    // })
-    const jdCookiesStr = process.env.JD_COOKIES;
-     const jdCookiesArr = jdCookiesStr.split("&");
-     for (let cookie of jdCookiesArr) {
-         cookiesArr.push(cookie);
-     }
+    Object.keys(jdCookieNode).forEach((item) => {
+        cookiesArr.push(jdCookieNode[item])
+    })
+    // const jdCookiesStr = process.env.JD_COOKIES;
+    //  const jdCookiesArr = jdCookiesStr.split("&");
+    //  for (let cookie of jdCookiesArr) {
+    //      cookiesArr.push(cookie);
+    //  }
 } else {
     cookiesArr.push($.getdata('CookieJD'));
     cookiesArr.push($.getdata('CookieJD2'));
