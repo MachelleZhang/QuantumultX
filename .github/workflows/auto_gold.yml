@@ -1,7 +1,6 @@
 name: auto_gold
 
 on:
-  workflow_dispatch:
   schedule:
      - cron: '*/12 * * * *'
 
