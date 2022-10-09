@@ -1,6 +1,7 @@
 name: auto_share
 
 on:
+  workflow_dispatch:
   schedule:
      - cron: '13 9,20 * * *'
 jobs:
