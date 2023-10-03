@@ -3,7 +3,7 @@ name: auto_share
 on:
   workflow_dispatch:
   schedule:
-     - cron: '13 9,20 * * *'
+     - cron: '13 9,15,20 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest  
